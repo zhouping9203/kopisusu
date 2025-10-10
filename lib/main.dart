@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:kopisusu/hometab/IndexLoanPage.dart';
 import 'package:kopisusu/hometab/IndexProfilePage.dart';
 
 import 'hometab/IndexHomePage.dart';
+import 'l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +31,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,  // Material 组件本地化
+        GlobalCupertinoLocalizations.delegate,  // iOS 组件本地化
+        GlobalWidgetsLocalizations.delegate,   // 基础组件本地化
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }

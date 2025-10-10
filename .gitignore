@@ -30,6 +30,10 @@
 .pub-cache/
 .pub/
 /build/
+/flutter_pub_cache/
+/kopisusu/build/
+/kopisusu/flutter_pub_cache/
+pubspec.lock
 
 # Web related
 lib/generated_plugin_registrant.dart
