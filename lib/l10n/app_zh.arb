@@ -1,0 +1,17 @@
+{
+  "helloWorld": "你好世界！",
+  "welcome": "欢迎, {name}!",
+  "@welcome": {
+    "description": "欢迎消息",
+    "placeholders": {
+      "name": {}
+    }
+  },
+
+  "profile": "我的",
+  "login": "登录",
+  "member": "会员",
+  "modify_information": "修改资料",
+  "help": "帮助",
+  "about": "关于"
+}

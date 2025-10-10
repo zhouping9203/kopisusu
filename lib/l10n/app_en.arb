@@ -1,0 +1,17 @@
+{
+  "helloWorld": "Hello World!",
+  "welcome": "Welcome, {name}!",
+  "@welcome": {
+    "description": "Welcome!!!",
+    "placeholders": {
+      "name": {}
+    }
+  },
+
+  "profile": "Profile",
+  "login": "Login",
+  "member": "Member",
+  "modify_information": "Modify information",
+  "help": "Help",
+  "about": "About"
+}
