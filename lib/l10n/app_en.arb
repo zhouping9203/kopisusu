@@ -13,5 +13,13 @@
   "member": "Member",
   "modify_information": "Modify information",
   "help": "Help",
-  "about": "About"
+  "about": "About",
+
+  "customer_service_": "Customer service:",
+  "phone_": "Phone:",
+  "email_": "Email:",
+  "copied": "Copied",
+  "log_out": "Log out",
+  "cancel_account": "Cancel account",
+  "register_and_login": "Register and Login"
 }

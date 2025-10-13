@@ -33,4 +33,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get about => 'About';
+
+  @override
+  String get customer_service_ => 'Customer service:';
+
+  @override
+  String get phone_ => 'Phone:';
+
+  @override
+  String get email_ => 'Email:';
+
+  @override
+  String get copied => 'Copied';
+
+  @override
+  String get log_out => 'Log out';
+
+  @override
+  String get cancel_account => 'Cancel account';
+
+  @override
+  String get register_and_login => 'Register and Login';
 }

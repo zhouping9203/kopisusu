@@ -142,6 +142,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'About'**
   String get about;
+
+  /// No description provided for @customer_service_.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer service:'**
+  String get customer_service_;
+
+  /// No description provided for @phone_.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone:'**
+  String get phone_;
+
+  /// No description provided for @email_.
+  ///
+  /// In en, this message translates to:
+  /// **'Email:'**
+  String get email_;
+
+  /// No description provided for @copied.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied'**
+  String get copied;
+
+  /// No description provided for @log_out.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out'**
+  String get log_out;
+
+  /// No description provided for @cancel_account.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel account'**
+  String get cancel_account;
+
+  /// No description provided for @register_and_login.
+  ///
+  /// In en, this message translates to:
+  /// **'Register and Login'**
+  String get register_and_login;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -33,4 +33,25 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get about => '关于';
+
+  @override
+  String get customer_service_ => '客服:';
+
+  @override
+  String get phone_ => '电话:';
+
+  @override
+  String get email_ => '邮箱:';
+
+  @override
+  String get copied => '已复制';
+
+  @override
+  String get log_out => '退出登录';
+
+  @override
+  String get cancel_account => '注销账号';
+
+  @override
+  String get register_and_login => '注册登录';
 }
