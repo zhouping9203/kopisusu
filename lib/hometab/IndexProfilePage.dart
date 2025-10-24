@@ -75,7 +75,7 @@ class _IndexProfilePageState extends State<IndexProfilePage> {
       backgroundColor: const Color(0xFFF9F9F9),
       body: Stack(
         children: [
-          Image.asset("assets/images/me_profile_tbgxw.webp"),
+          Image.asset("assets/images/me_profile_tbgxw.webp",width: double.maxFinite,fit: BoxFit.fitWidth,),
           ListView(
             children: [
               AppBar(title: Text(AppLocalizations.of(context)!.profile,style: const TextStyle(color: Colors.white,fontSize: 17),),centerTitle: true,backgroundColor: Colors.transparent,),

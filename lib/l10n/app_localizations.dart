@@ -184,6 +184,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Register and Login'**
   String get register_and_login;
+
+  /// No description provided for @please_enter_your_phone_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your phone number'**
+  String get please_enter_your_phone_number;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -12,10 +12,15 @@ class Userloginpage extends StatefulWidget {
 
 class _UserloginpageState extends State<Userloginpage> {
 
+  final _phoneController = TextEditingController();
+
+  bool showPhoneInputClearBtn = false;
+
   @override
   void initState() {
     super.initState();
 
+    _phoneController.addListener(_onPhoneChange);
 
   }
 
@@ -27,10 +32,23 @@ class _UserloginpageState extends State<Userloginpage> {
   }
 
   @override
+  void dispose() {
+    _phoneController.removeListener(_onPhoneChange);
+    _phoneController.dispose();
+    super.dispose();
+  }
+  
+  @override
   void deactivate() {
     super.deactivate();
 
+  }
 
+  void _onPhoneChange(){
+    print(_phoneController.text);
+    setState(() {
+      showPhoneInputClearBtn = _phoneController.text.isNotEmpty;
+    });
   }
 
   @override
@@ -39,7 +57,7 @@ class _UserloginpageState extends State<Userloginpage> {
       backgroundColor: const Color(0xFFFFFFFF),
       body: Stack(
         children: [
-          Image.asset("assets/images/me_profile_tbgxw.webp"),
+          Image.asset("assets/images/me_profile_tbgxw.webp",width: double.maxFinite,fit: BoxFit.fitWidth,),
           Column(
             children: [
               AppBar(leading: GestureDetector(
@@ -71,7 +89,27 @@ class _UserloginpageState extends State<Userloginpage> {
                 child: Column(
                   children: [
                     const SizedBox(height: 30.5,),
-                    _buildInputPhoneItem()
+                    _buildInputPhoneItem(),
+                    Container(
+                      margin: EdgeInsets.only(left: 17.5,right: 17.5,top: 16),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xff123157),
+                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          elevation: 2,
+                        ),
+                        onPressed: () {},
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: double.maxFinite,
+                          height: 49,
+                          child: Text(AppLocalizations.of(context)!.register_and_login,style: TextStyle(color: Colors.white),),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               )
@@ -97,10 +135,33 @@ class _UserloginpageState extends State<Userloginpage> {
         )
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const SizedBox(width: 21.5,),
           Text("+62",style: TextStyle(color: Color(0xff060518),fontSize: 20),),
-
-          Image.asset("assets/images/close_type1.webp")
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.only(left: 12,right: 12),
+              child: TextField(
+                controller: _phoneController,
+                decoration: InputDecoration(
+                    hintText: AppLocalizations.of(context)!.please_enter_your_phone_number,
+                  border: InputBorder.none
+                ),
+                style: TextStyle(color: Color(0xff060518),fontWeight: FontWeight.w500,fontSize: 20),
+                keyboardType: TextInputType.phone,
+                cursorColor: Colors.black
+              ),
+            ),
+          ),
+          showPhoneInputClearBtn ? GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: (){
+              _phoneController.clear();
+            },
+            child: Image.asset("assets/images/close_type1.webp"),
+          ): Container(),
+          const SizedBox(width: 15,),
         ],
       ),
     );

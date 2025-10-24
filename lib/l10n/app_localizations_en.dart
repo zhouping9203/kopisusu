@@ -54,4 +54,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get register_and_login => 'Register and Login';
+
+  @override
+  String get please_enter_your_phone_number => 'Please enter your phone number';
 }

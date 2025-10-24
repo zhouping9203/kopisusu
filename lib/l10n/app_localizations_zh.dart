@@ -54,4 +54,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get register_and_login => '注册登录';
+
+  @override
+  String get please_enter_your_phone_number => '请输入手机号码';
 }

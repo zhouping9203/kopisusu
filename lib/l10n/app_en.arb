@@ -21,5 +21,6 @@
   "copied": "Copied",
   "log_out": "Log out",
   "cancel_account": "Cancel account",
-  "register_and_login": "Register and Login"
+  "register_and_login": "Register and Login",
+  "please_enter_your_phone_number": "Please enter your phone number"
 }
