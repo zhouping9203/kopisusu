@@ -60,7 +60,6 @@ class _UserloginOtpPageState extends State<UserloginOtpPage> {
   void _onOtpChange(){
     print(_otpController.text);
     setState(() {
-      showOtpInputClearBtn = _otpController.text.isNotEmpty;
       _loginBtnEnable = _otpController.text.isNotEmpty;
     });
   }
@@ -206,7 +205,7 @@ class _UserloginOtpPageState extends State<UserloginOtpPage> {
                                   GestureDetector(
                                     behavior: HitTestBehavior.opaque,
                                     onTap: (){
-
+                                      Navigator.of(context).pop();
                                     },
                                     child: Container(
                                       margin: EdgeInsets.only(left: 0,right: 17.5,top: 5,bottom: 5),
