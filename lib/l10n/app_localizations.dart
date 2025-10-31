@@ -190,6 +190,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please enter your phone number'**
   String get please_enter_your_phone_number;
+
+  /// No description provided for @i_have_read_and_agree.
+  ///
+  /// In en, this message translates to:
+  /// **'I have read and agree '**
+  String get i_have_read_and_agree;
+
+  /// No description provided for @privacy_policy_.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacy_policy_;
+
+  /// No description provided for @please_enter_the_verification_code.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter the verification code'**
+  String get please_enter_the_verification_code;
+
+  /// No description provided for @enter_verification_code.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter verification code'**
+  String get enter_verification_code;
+
+  /// No description provided for @verification_code.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification code'**
+  String get verification_code;
+
+  /// No description provided for @verification_code_sent_to.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification code sent to'**
+  String get verification_code_sent_to;
+
+  /// No description provided for @resend.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend'**
+  String get resend;
+
+  /// No description provided for @otp_not_receive_contactus_tip.
+  ///
+  /// In en, this message translates to:
+  /// **'Not receiving the verification code? Please contact our customer service'**
+  String get otp_not_receive_contactus_tip;
+
+  /// No description provided for @telephone.
+  ///
+  /// In en, this message translates to:
+  /// **'Telephone'**
+  String get telephone;
+
+  /// No description provided for @whatsapp.
+  ///
+  /// In en, this message translates to:
+  /// **'Whatsapp'**
+  String get whatsapp;
+
+  /// No description provided for @or.
+  ///
+  /// In en, this message translates to:
+  /// **'or'**
+  String get or;
+
+  /// No description provided for @change_your_phone_number.
+  ///
+  /// In en, this message translates to:
+  /// **'change your phone number'**
+  String get change_your_phone_number;
+
+  /// No description provided for @set_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Set Password'**
+  String get set_password;
+
+  /// No description provided for @enter_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Password'**
+  String get enter_password;
+
+  /// No description provided for @please_enter_your_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your password'**
+  String get please_enter_your_password;
+
+  /// No description provided for @please_enter_your_password_again.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your password again'**
+  String get please_enter_your_password_again;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

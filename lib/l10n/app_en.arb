@@ -22,5 +22,23 @@
   "log_out": "Log out",
   "cancel_account": "Cancel account",
   "register_and_login": "Register and Login",
-  "please_enter_your_phone_number": "Please enter your phone number"
+  "please_enter_your_phone_number": "Please enter your phone number",
+
+  "i_have_read_and_agree": "I have read and agree ",
+  "privacy_policy_": "Privacy Policy",
+
+  "please_enter_the_verification_code": "Please enter the verification code",
+  "enter_verification_code": "Enter verification code",
+  "verification_code": "Verification code",
+  "verification_code_sent_to": "Verification code sent to",
+  "resend": "Resend",
+  "otp_not_receive_contactus_tip": "Not receiving the verification code? Please contact our customer service",
+  "telephone": "Telephone",
+  "whatsapp": "Whatsapp",
+  "or": "or",
+  "change_your_phone_number": "change your phone number",
+  "set_password": "Set Password",
+  "enter_password": "Enter Password",
+  "please_enter_your_password": "Please enter your password",
+  "please_enter_your_password_again": "Please enter your password again"
 }

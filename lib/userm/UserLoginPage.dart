@@ -1,6 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:kopisusu/userm/UserLoginOtpPage.dart';
 
 import '../l10n/app_localizations.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Userloginpage extends StatefulWidget {
   const Userloginpage({Key? key}) : super(key: key);
@@ -15,6 +18,8 @@ class _UserloginpageState extends State<Userloginpage> {
   final _phoneController = TextEditingController();
 
   bool showPhoneInputClearBtn = false;
+  bool _loginBtnEnable = false;
+  bool _onPravicyAgree = false;
 
   @override
   void initState() {
@@ -48,6 +53,7 @@ class _UserloginpageState extends State<Userloginpage> {
     print(_phoneController.text);
     setState(() {
       showPhoneInputClearBtn = _phoneController.text.isNotEmpty;
+      _loginBtnEnable = _phoneController.text.isNotEmpty;
     });
   }
 
@@ -58,60 +64,70 @@ class _UserloginpageState extends State<Userloginpage> {
       body: Stack(
         children: [
           Image.asset("assets/images/me_profile_tbgxw.webp",width: double.maxFinite,fit: BoxFit.fitWidth,),
-          Column(
+          ListView(
             children: [
-              AppBar(leading: GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onTap: (){
-                  Navigator.pop(context);
-                },
-                child: const Icon(Icons.close_sharp,color: Colors.white,),
-              ),centerTitle: true,backgroundColor: Colors.transparent,),
-              
-              Container(
-                margin: const EdgeInsets.only(left: 18,top: 25),
-                alignment: Alignment.centerLeft,
-                child: Image.asset("assets/images/app_name_type1.webp",width: 234.5),
-              ),
+              Column(
+                children: [
+                  AppBar(leading: GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: const Icon(Icons.close_sharp,color: Colors.white,),
+                  ),centerTitle: true,backgroundColor: Colors.transparent,),
 
-              Container(
-                margin: const EdgeInsets.only(left: 18,top: 20),
-                alignment: Alignment.centerLeft,
-                child: Text(AppLocalizations.of(context)!.register_and_login,style: const TextStyle(color: Colors.white,fontSize: 23,)),
-              ),
-              const SizedBox(height: 10,),
-              Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20))
-                ),
-                width: double.maxFinite,
-                child: Column(
-                  children: [
-                    const SizedBox(height: 30.5,),
-                    _buildInputPhoneItem(),
-                    Container(
-                      margin: EdgeInsets.only(left: 17.5,right: 17.5,top: 16),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xff123157),
-                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          elevation: 2,
-                        ),
-                        onPressed: () {},
-                        child: Container(
-                          alignment: Alignment.center,
-                          width: double.maxFinite,
-                          height: 49,
-                          child: Text(AppLocalizations.of(context)!.register_and_login,style: TextStyle(color: Colors.white),),
-                        ),
-                      ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 18,top: 25),
+                    alignment: Alignment.centerLeft,
+                    child: Image.asset("assets/images/app_name_type1.webp",width: 234.5),
+                  ),
+
+                  Container(
+                    margin: const EdgeInsets.only(left: 18,top: 20),
+                    alignment: Alignment.centerLeft,
+                    child: Text(AppLocalizations.of(context)!.register_and_login,style: const TextStyle(color: Colors.white,fontSize: 23,)),
+                  ),
+                  const SizedBox(height: 10,),
+                  Container(
+                    decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20))
                     ),
-                  ],
-                ),
+                    width: double.maxFinite,
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 30.5,),
+                        _buildInputPhoneItem(),
+                        Container(
+                          margin: EdgeInsets.only(left: 17.5,right: 17.5,top: 16),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(_loginBtnEnable && _onPravicyAgree ? 0xff123157 : 0xffD6D5D6),
+                              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              elevation: 2,
+                            ),
+                            onPressed: () {
+                              if(_loginBtnEnable && _onPravicyAgree) {
+                                _startLogin();
+                              }
+                            },
+                            child: Container(
+                              alignment: Alignment.center,
+                              width: double.maxFinite,
+                              height: 49,
+                              child: Text(AppLocalizations.of(context)!.register_and_login,style: TextStyle(color: Colors.white),),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  _buildReadPravicyItem()
+                ],
               )
             ],
           )
@@ -165,6 +181,80 @@ class _UserloginpageState extends State<Userloginpage> {
         ],
       ),
     );
+  }
+
+  Widget _buildReadPravicyItem(){
+    return Row(
+      children: [
+        Checkbox(
+          value: _onPravicyAgree,
+          onChanged: (e){
+            setState(() {
+              _onPravicyAgree = e ?? false;
+            });
+          },
+          shape: const CircleBorder(),
+          activeColor: const Color(0xffFF8007),
+        ),
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(
+                text: AppLocalizations.of(context)!.i_have_read_and_agree,
+                style: TextStyle(color: Colors.grey[600]),
+              ),
+              // TextSpan(
+              //   text: '《用户协议》',
+              //   style: TextStyle(
+              //     color: Colors.blue,
+              //     decoration: TextDecoration.underline,
+              //     fontWeight: FontWeight.bold,
+              //   ),
+              //   recognizer: TapGestureRecognizer()
+              //     ..onTap = () {
+              //       _showDialog(context, '用户协议', '这里是用户协议内容...');
+              //     },
+              // ),
+              // TextSpan(
+              //   text: '和',
+              //   style: TextStyle(color: Colors.grey[600]),
+              // ),
+              TextSpan(
+                text: AppLocalizations.of(context)!.privacy_policy_,
+                style: const TextStyle(
+                  color: Color(0xffFF8007),
+                  // decoration: TextDecoration.underline,
+                  fontWeight: FontWeight.bold,
+                ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+
+                  },
+              )
+            ],
+          ),
+          textAlign: TextAlign.center,
+        )
+      ],
+    );
+  }
+
+  void _startLogin(){
+    String phone = _phoneController.text;
+    if(phone.isEmpty) {
+      Fluttertoast.showToast(
+          msg: AppLocalizations.of(context)!.please_enter_your_phone_number,
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          textColor: Colors.white,
+          fontSize: 16.0
+      );
+      return;
+    }
+    Navigator.of(context).push(MaterialPageRoute(builder: (context){
+      return UserloginOtpPage(phone: phone);
+    }));
   }
 
 }

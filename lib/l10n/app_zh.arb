@@ -21,5 +21,23 @@
   "log_out": "退出登录",
   "cancel_account": "注销账号",
   "register_and_login": "注册登录",
-  "please_enter_your_phone_number": "请输入手机号码"
+  "please_enter_your_phone_number": "请输入手机号码",
+
+  "i_have_read_and_agree": "我已阅读并同意",
+  "privacy_policy_": "《隐私政策》",
+
+  "please_enter_the_verification_code": "请输入验证码",
+  "enter_verification_code": "输入验证码",
+  "verification_code": "验证码",
+  "verification_code_sent_to": "已发送验证码至",
+  "resend": "重新发送",
+  "otp_not_receive_contactus_tip": "收不到验证码？请联系我们的客服",
+  "telephone": "电话客服",
+  "whatsapp": "Whatsapp",
+  "or": "或者",
+  "change_your_phone_number": "更换手机号",
+  "set_password": "设置密码",
+  "enter_password": "输入密码",
+  "please_enter_your_password": "请输入密码",
+  "please_enter_your_password_again": "请再次输入密码"
 }

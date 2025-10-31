@@ -57,4 +57,52 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get please_enter_your_phone_number => 'Please enter your phone number';
+
+  @override
+  String get i_have_read_and_agree => 'I have read and agree ';
+
+  @override
+  String get privacy_policy_ => 'Privacy Policy';
+
+  @override
+  String get please_enter_the_verification_code => 'Please enter the verification code';
+
+  @override
+  String get enter_verification_code => 'Enter verification code';
+
+  @override
+  String get verification_code => 'Verification code';
+
+  @override
+  String get verification_code_sent_to => 'Verification code sent to';
+
+  @override
+  String get resend => 'Resend';
+
+  @override
+  String get otp_not_receive_contactus_tip => 'Not receiving the verification code? Please contact our customer service';
+
+  @override
+  String get telephone => 'Telephone';
+
+  @override
+  String get whatsapp => 'Whatsapp';
+
+  @override
+  String get or => 'or';
+
+  @override
+  String get change_your_phone_number => 'change your phone number';
+
+  @override
+  String get set_password => 'Set Password';
+
+  @override
+  String get enter_password => 'Enter Password';
+
+  @override
+  String get please_enter_your_password => 'Please enter your password';
+
+  @override
+  String get please_enter_your_password_again => 'Please enter your password again';
 }

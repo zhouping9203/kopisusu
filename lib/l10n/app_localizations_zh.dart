@@ -57,4 +57,52 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get please_enter_your_phone_number => '请输入手机号码';
+
+  @override
+  String get i_have_read_and_agree => '我已阅读并同意';
+
+  @override
+  String get privacy_policy_ => '《隐私政策》';
+
+  @override
+  String get please_enter_the_verification_code => '请输入验证码';
+
+  @override
+  String get enter_verification_code => '输入验证码';
+
+  @override
+  String get verification_code => '验证码';
+
+  @override
+  String get verification_code_sent_to => '已发送验证码至';
+
+  @override
+  String get resend => '重新发送';
+
+  @override
+  String get otp_not_receive_contactus_tip => '收不到验证码？请联系我们的客服';
+
+  @override
+  String get telephone => '电话客服';
+
+  @override
+  String get whatsapp => 'Whatsapp';
+
+  @override
+  String get or => '或者';
+
+  @override
+  String get change_your_phone_number => '更换手机号';
+
+  @override
+  String get set_password => '设置密码';
+
+  @override
+  String get enter_password => '输入密码';
+
+  @override
+  String get please_enter_your_password => '请输入密码';
+
+  @override
+  String get please_enter_your_password_again => '请再次输入密码';
 }
