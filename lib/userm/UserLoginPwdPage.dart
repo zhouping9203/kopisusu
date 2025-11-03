@@ -1,48 +1,49 @@
-import 'package:flutter/gestures.dart';
+
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:kopisusu/userm/UserLoginOtpPage.dart';
-import 'package:kopisusu/userm/UserLoginSetPwdPage.dart';
 
 import '../l10n/app_localizations.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'UserLoginPwdPage.dart';
+class UserloginPwdPage extends StatefulWidget {
 
-class Userloginpage extends StatefulWidget {
-  const Userloginpage({Key? key}) : super(key: key);
+  final String phone;
+
+  const UserloginPwdPage({Key? key,required this.phone}) : super(key: key);
 
 
   @override
-  State<Userloginpage> createState() => _UserloginpageState();
+  State<UserloginPwdPage> createState() => _UserloginPwdPageState();
 }
 
-class _UserloginpageState extends State<Userloginpage> {
+class _UserloginPwdPageState extends State<UserloginPwdPage> {
 
-  final _phoneController = TextEditingController();
+  final _pwdController = TextEditingController();
 
-  bool showPhoneInputClearBtn = false;
+  bool showpwdInputClearBtn = false;
   bool _loginBtnEnable = false;
-  bool _onPravicyAgree = false;
+
+  bool _hidePwd = true;
 
   @override
   void initState() {
     super.initState();
 
-    _phoneController.addListener(_onPhoneChange);
-
+    _pwdController.addListener(_onPwdChange);
   }
 
   @override
   void activate() {
     super.activate();
 
-
   }
 
   @override
   void dispose() {
-    _phoneController.removeListener(_onPhoneChange);
-    _phoneController.dispose();
+    _pwdController.removeListener(_onPwdChange);
+    _pwdController.dispose();
     super.dispose();
   }
   
@@ -52,11 +53,10 @@ class _UserloginpageState extends State<Userloginpage> {
 
   }
 
-  void _onPhoneChange(){
-    print(_phoneController.text);
+  void _onPwdChange(){
+    print(_pwdController.text);
     setState(() {
-      showPhoneInputClearBtn = _phoneController.text.isNotEmpty;
-      _loginBtnEnable = _phoneController.text.isNotEmpty;
+      _loginBtnEnable = _pwdController.text.isNotEmpty;
     });
   }
 
@@ -88,7 +88,7 @@ class _UserloginpageState extends State<Userloginpage> {
                   Container(
                     margin: const EdgeInsets.only(left: 18,top: 20),
                     alignment: Alignment.centerLeft,
-                    child: Text(AppLocalizations.of(context)!.register_and_login,style: const TextStyle(color: Colors.white,fontSize: 23,)),
+                    child: Text(AppLocalizations.of(context)!.enter_password,style: const TextStyle(color: Colors.white,fontSize: 23,)),
                   ),
                   const SizedBox(height: 10,),
                   Container(
@@ -98,22 +98,52 @@ class _UserloginpageState extends State<Userloginpage> {
                     ),
                     width: double.maxFinite,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(height: 30.5,),
-                        _buildInputPhoneItem(),
+
                         Container(
-                          margin: EdgeInsets.only(left: 17.5,right: 17.5,top: 16),
+                          margin: EdgeInsets.only(left: 17.5,right: 17.5),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(AppLocalizations.of(context)!.login_phone_number,style: TextStyle(fontSize: 15,color: Color(0xff666666)),),
+                              SizedBox(height: 4,),
+                              Text("+62 " + widget.phone,style: TextStyle(fontSize: 20,color: Color(0xff060518)),),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 18,),
+                        _buildInputPwdItem(),
+
+                        Container(
+                          alignment: Alignment.center,
+                          margin: EdgeInsets.only(top: 4,bottom: 9),
+                          child: GestureDetector(
+                            behavior: HitTestBehavior.opaque,
+                            onTap: (){
+                              _onForgetPassword();
+                            },
+                            child: Container(
+                              padding: EdgeInsets.only(left: 40,right: 40,top: 12,bottom: 12),
+                              child: Text(AppLocalizations.of(context)!.forget_the_password_,style: TextStyle(color: Color(0xffFF832A),fontSize: 16),),
+                            ),
+                          ),
+                        ),
+
+                        Container(
+                          margin: const EdgeInsets.only(left: 17.5,right: 17.5),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(_loginBtnEnable && _onPravicyAgree ? 0xff123157 : 0xffD6D5D6),
-                              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                              backgroundColor: Color(_loginBtnEnable ? 0xff123157 : 0xffD6D5D6),
+                              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               elevation: 2,
                             ),
                             onPressed: () {
-                              if(_loginBtnEnable && _onPravicyAgree) {
+                              if(_loginBtnEnable) {
                                 _startLogin();
                               }
                             },
@@ -121,15 +151,13 @@ class _UserloginpageState extends State<Userloginpage> {
                               alignment: Alignment.center,
                               width: double.maxFinite,
                               height: 49,
-                              child: Text(AppLocalizations.of(context)!.register_and_login,style: TextStyle(color: Colors.white),),
+                              child: Text(AppLocalizations.of(context)!.login,style: const TextStyle(color: Colors.white),),
                             ),
                           ),
-                        ),
+                        )
                       ],
                     ),
                   ),
-
-                  _buildReadPravicyItem()
                 ],
               )
             ],
@@ -139,7 +167,7 @@ class _UserloginpageState extends State<Userloginpage> {
     );
   }
   
-  Widget _buildInputPhoneItem(){
+  Widget _buildInputPwdItem(){
     
     return Container(
       margin: const EdgeInsets.only(left: 17,right: 17),
@@ -156,97 +184,53 @@ class _UserloginpageState extends State<Userloginpage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(width: 21.5,),
-          Text("+62",style: TextStyle(color: Color(0xff060518),fontSize: 20),),
+          const SizedBox(width: 11.5,),
           Expanded(
             child: Container(
               margin: const EdgeInsets.only(left: 12,right: 12),
               child: TextField(
-                controller: _phoneController,
+                  obscureText: _hidePwd,
+                controller: _pwdController,
                 decoration: InputDecoration(
-                    hintText: AppLocalizations.of(context)!.please_enter_your_phone_number,
+                    hintText: AppLocalizations.of(context)!.please_enter_your_password,
                   border: InputBorder.none
                 ),
                 style: TextStyle(color: Color(0xff060518),fontWeight: FontWeight.w500,fontSize: 20),
-                keyboardType: TextInputType.phone,
+                keyboardType: TextInputType.text,
                 cursorColor: Colors.black
               ),
             ),
           ),
-          showPhoneInputClearBtn ? GestureDetector(
+          showpwdInputClearBtn ? GestureDetector(
             behavior: HitTestBehavior.opaque,
             onTap: (){
-              _phoneController.clear();
+              _pwdController.clear();
             },
             child: Image.asset("assets/images/close_type1.webp"),
           ): Container(),
+
+          GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: (){
+              setState(() {
+                _hidePwd = !_hidePwd;
+              });
+            },
+            child: Image.asset(_hidePwd ? "assets/images/eye_close.webp" : "assets/images/eye_open.webp"),
+          ),
+
           const SizedBox(width: 15,),
         ],
       ),
     );
   }
 
-  Widget _buildReadPravicyItem(){
-    return Row(
-      children: [
-        Checkbox(
-          value: _onPravicyAgree,
-          onChanged: (e){
-            setState(() {
-              _onPravicyAgree = e ?? false;
-            });
-          },
-          shape: const CircleBorder(),
-          activeColor: const Color(0xffFF8007),
-        ),
-        Text.rich(
-          TextSpan(
-            children: [
-              TextSpan(
-                text: AppLocalizations.of(context)!.i_have_read_and_agree,
-                style: TextStyle(color: Colors.grey[600]),
-              ),
-              // TextSpan(
-              //   text: '《用户协议》',
-              //   style: TextStyle(
-              //     color: Colors.blue,
-              //     decoration: TextDecoration.underline,
-              //     fontWeight: FontWeight.bold,
-              //   ),
-              //   recognizer: TapGestureRecognizer()
-              //     ..onTap = () {
-              //       _showDialog(context, '用户协议', '这里是用户协议内容...');
-              //     },
-              // ),
-              // TextSpan(
-              //   text: '和',
-              //   style: TextStyle(color: Colors.grey[600]),
-              // ),
-              TextSpan(
-                text: AppLocalizations.of(context)!.privacy_policy_,
-                style: const TextStyle(
-                  color: Color(0xffFF8007),
-                  // decoration: TextDecoration.underline,
-                  fontWeight: FontWeight.bold,
-                ),
-                recognizer: TapGestureRecognizer()
-                  ..onTap = () {
-
-                  },
-              )
-            ],
-          ),
-          textAlign: TextAlign.center,
-        )
-      ],
-    );
-  }
-
   void _startLogin(){
-    String phone = _phoneController.text;
-    if(phone.isEmpty) {
+    String phone = widget.phone;
+    String pwd = _pwdController.text;
+    if(pwd.isEmpty) {
       Fluttertoast.showToast(
-          msg: AppLocalizations.of(context)!.please_enter_your_phone_number,
+          msg: AppLocalizations.of(context)!.please_enter_your_password,
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.CENTER,
           timeInSecForIosWeb: 1,
@@ -255,8 +239,13 @@ class _UserloginpageState extends State<Userloginpage> {
       );
       return;
     }
+
+
+  }
+
+  void _onForgetPassword(){
     Navigator.of(context).push(MaterialPageRoute(builder: (context){
-      return UserloginSetPwdPage(phone: phone);
+      return UserloginOtpPage(phone: widget.phone);
     }));
   }
 

@@ -59,6 +59,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get please_enter_your_phone_number => '请输入手机号码';
 
   @override
+  String get login_phone_number => '登录手机号';
+
+  @override
   String get i_have_read_and_agree => '我已阅读并同意';
 
   @override
@@ -105,4 +108,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get please_enter_your_password_again => '请再次输入密码';
+
+  @override
+  String get forget_the_password_ => '忘记密码?';
 }

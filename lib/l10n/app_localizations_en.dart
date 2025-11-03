@@ -59,6 +59,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get please_enter_your_phone_number => 'Please enter your phone number';
 
   @override
+  String get login_phone_number => 'Login phone number';
+
+  @override
   String get i_have_read_and_agree => 'I have read and agree ';
 
   @override
@@ -105,4 +108,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get please_enter_your_password_again => 'Please enter your password again';
+
+  @override
+  String get forget_the_password_ => 'Forget the password?';
 }

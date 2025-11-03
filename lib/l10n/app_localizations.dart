@@ -191,6 +191,12 @@ abstract class AppLocalizations {
   /// **'Please enter your phone number'**
   String get please_enter_your_phone_number;
 
+  /// No description provided for @login_phone_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Login phone number'**
+  String get login_phone_number;
+
   /// No description provided for @i_have_read_and_agree.
   ///
   /// In en, this message translates to:
@@ -286,6 +292,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please enter your password again'**
   String get please_enter_your_password_again;
+
+  /// No description provided for @forget_the_password_.
+  ///
+  /// In en, this message translates to:
+  /// **'Forget the password?'**
+  String get forget_the_password_;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

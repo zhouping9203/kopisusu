@@ -22,6 +22,7 @@
   "cancel_account": "注销账号",
   "register_and_login": "注册登录",
   "please_enter_your_phone_number": "请输入手机号码",
+  "login_phone_number": "登录手机号",
 
   "i_have_read_and_agree": "我已阅读并同意",
   "privacy_policy_": "《隐私政策》",
@@ -39,5 +40,6 @@
   "set_password": "设置密码",
   "enter_password": "输入密码",
   "please_enter_your_password": "请输入密码",
-  "please_enter_your_password_again": "请再次输入密码"
+  "please_enter_your_password_again": "请再次输入密码",
+  "forget_the_password_": "忘记密码?"
 }

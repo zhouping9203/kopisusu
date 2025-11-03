@@ -23,6 +23,7 @@
   "cancel_account": "Cancel account",
   "register_and_login": "Register and Login",
   "please_enter_your_phone_number": "Please enter your phone number",
+  "login_phone_number": "Login phone number",
 
   "i_have_read_and_agree": "I have read and agree ",
   "privacy_policy_": "Privacy Policy",
@@ -40,5 +41,7 @@
   "set_password": "Set Password",
   "enter_password": "Enter Password",
   "please_enter_your_password": "Please enter your password",
-  "please_enter_your_password_again": "Please enter your password again"
+  "please_enter_your_password_again": "Please enter your password again",
+  "forget_the_password_": "Forget the password?"
+
 }
