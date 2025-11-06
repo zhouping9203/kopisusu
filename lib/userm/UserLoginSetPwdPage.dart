@@ -28,6 +28,8 @@ class _UserloginSetPwdPageState extends State<UserloginSetPwdPage> {
   bool _hidePwd = true;
   bool _hideRetypePwd = true;
 
+  String? errorTip = null;
+
   @override
   void initState() {
     super.initState();
@@ -119,32 +121,17 @@ class _UserloginSetPwdPageState extends State<UserloginSetPwdPage> {
                         _buildInputPwdRetypeItem(),
 
                         Container(
-                          margin: EdgeInsets.only(left: 17.5,right: 17.5),
+                          margin: EdgeInsets.only(left: 17.5,right: 17.5,top: 10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(AppLocalizations.of(context)!.verification_code_sent_to,style: TextStyle(fontSize: 15,color: Color(0xff666666)),),
+                              Text(AppLocalizations.of(context)!.password_set_tip,style: TextStyle(fontSize: 15,color: Color(0xff666666)),),
                             ],
                           ),
                         ),
 
                         Container(
-                          alignment: Alignment.center,
-                          margin: EdgeInsets.only(top: 4,bottom: 9),
-                          child: GestureDetector(
-                            behavior: HitTestBehavior.opaque,
-                            onTap: (){
-                              _onForgetPassword();
-                            },
-                            child: Container(
-                              padding: EdgeInsets.only(left: 40,right: 40,top: 12,bottom: 12),
-                              child: Text(AppLocalizations.of(context)!.forget_the_password_,style: TextStyle(color: Color(0xffFF832A),fontSize: 16),),
-                            ),
-                          ),
-                        ),
-
-                        Container(
-                          margin: const EdgeInsets.only(left: 17.5,right: 17.5),
+                          margin: const EdgeInsets.only(left: 17.5,right: 17.5,top: 20),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Color(_loginBtnEnable ? 0xff123157 : 0xffD6D5D6),
@@ -163,10 +150,21 @@ class _UserloginSetPwdPageState extends State<UserloginSetPwdPage> {
                               alignment: Alignment.center,
                               width: double.maxFinite,
                               height: 49,
-                              child: Text(AppLocalizations.of(context)!.login,style: const TextStyle(color: Colors.white),),
+                              child: Text(AppLocalizations.of(context)!.set_up,style: const TextStyle(color: Colors.white),),
                             ),
                           ),
-                        )
+                        ),
+
+                        (errorTip?.length ?? 0) > 0 ?
+                        Container(
+                          margin: EdgeInsets.only(left: 17.5,right: 17.5,top: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(errorTip!,style: TextStyle(fontSize: 17,color: Color(0xffFF2828)),),
+                            ],
+                          ),
+                        ) : Container(),
                       ],
                     ),
                   ),
@@ -282,9 +280,9 @@ class _UserloginSetPwdPageState extends State<UserloginSetPwdPage> {
   }
 
   void _startLogin(){
-    String phone = widget.phone;
     String pwd = _pwdController.text;
-    if(pwd.isEmpty) {
+    String pwdReType = _pwdRetypeController.text;
+    if(pwd.isEmpty || pwdReType.isEmpty) {
       Fluttertoast.showToast(
           msg: AppLocalizations.of(context)!.please_enter_your_password,
           toastLength: Toast.LENGTH_SHORT,
@@ -296,13 +294,17 @@ class _UserloginSetPwdPageState extends State<UserloginSetPwdPage> {
       return;
     }
 
+    if(pwd != pwdReType) {
+      setState(() {
+        errorTip = AppLocalizations.of(context)!.the_two_passwords_do_not_match;
+      });
+      return;
+    }
 
-  }
+    setState(() {
+      errorTip = null;
+    });
 
-  void _onForgetPassword(){
-    Navigator.of(context).push(MaterialPageRoute(builder: (context){
-      return UserloginOtpPage(phone: widget.phone);
-    }));
   }
 
 }

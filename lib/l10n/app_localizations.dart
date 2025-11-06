@@ -275,6 +275,12 @@ abstract class AppLocalizations {
   /// **'Set Password'**
   String get set_password;
 
+  /// No description provided for @set_up.
+  ///
+  /// In en, this message translates to:
+  /// **'Set up'**
+  String get set_up;
+
   /// No description provided for @enter_password.
   ///
   /// In en, this message translates to:
@@ -298,6 +304,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Forget the password?'**
   String get forget_the_password_;
+
+  /// No description provided for @password_set_tip.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is 6-12 characters long and can consist of letters or numbers.'**
+  String get password_set_tip;
+
+  /// No description provided for @the_two_passwords_do_not_match.
+  ///
+  /// In en, this message translates to:
+  /// **'The two passwords do not match'**
+  String get the_two_passwords_do_not_match;
+
+  /// No description provided for @identity_verification.
+  ///
+  /// In en, this message translates to:
+  /// **'Identity Verification'**
+  String get identity_verification;
+
+  /// No description provided for @login_phone_tip.
+  ///
+  /// In en, this message translates to:
+  /// **'You will be using %s to log in/register. \nPlease ensure your mobile phone number is entered correctly.'**
+  String get login_phone_tip;
+
+  /// No description provided for @member_basic_information.
+  ///
+  /// In en, this message translates to:
+  /// **'Member Basic Information'**
+  String get member_basic_information;
+
+  /// No description provided for @id_number.
+  ///
+  /// In en, this message translates to:
+  /// **'ID Number'**
+  String get id_number;
+
+  /// No description provided for @please_enter_your_id_number_again.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your ID number again'**
+  String get please_enter_your_id_number_again;
+
+  /// No description provided for @full_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get full_name;
+
+  /// No description provided for @supplementary_information.
+  ///
+  /// In en, this message translates to:
+  /// **'Supplementary Information'**
+  String get supplementary_information;
+
+  /// No description provided for @education_level.
+  ///
+  /// In en, this message translates to:
+  /// **'Education Level'**
+  String get education_level;
+
+  /// No description provided for @religion.
+  ///
+  /// In en, this message translates to:
+  /// **'Religion'**
+  String get religion;
+
+  /// No description provided for @marital_status.
+  ///
+  /// In en, this message translates to:
+  /// **'Marital Status'**
+  String get marital_status;
+
+  /// No description provided for @employment.
+  ///
+  /// In en, this message translates to:
+  /// **'Employment'**
+  String get employment;
+
+  /// No description provided for @address.
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get address;
+
+  /// No description provided for @detailed_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Detailed Address'**
+  String get detailed_address;
+
+  /// No description provided for @please_select.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select'**
+  String get please_select;
+
+  /// No description provided for @please_enter.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter'**
+  String get please_enter;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kopisusu/userm/UserLoginOtpPage.dart';
 import 'package:kopisusu/userm/UserLoginSetPwdPage.dart';
+import 'package:kopisusu/userm/UserPersonalInfoAuthPage.dart';
 
 import '../l10n/app_localizations.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -256,7 +257,7 @@ class _UserloginpageState extends State<Userloginpage> {
       return;
     }
     Navigator.of(context).push(MaterialPageRoute(builder: (context){
-      return UserloginSetPwdPage(phone: phone);
+      return UserPersonalInfoAuthPage(phone: phone);
     }));
   }
 

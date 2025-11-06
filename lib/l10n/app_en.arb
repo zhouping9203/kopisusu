@@ -39,9 +39,29 @@
   "or": "or",
   "change_your_phone_number": "change your phone number",
   "set_password": "Set Password",
+  "set_up": "Set up",
   "enter_password": "Enter Password",
   "please_enter_your_password": "Please enter your password",
   "please_enter_your_password_again": "Please enter your password again",
-  "forget_the_password_": "Forget the password?"
+  "forget_the_password_": "Forget the password?",
+  "password_set_tip": "Password is 6-12 characters long and can consist of letters or numbers.",
+  "the_two_passwords_do_not_match": "The two passwords do not match",
+
+  "identity_verification": "Identity Verification",
+  "login_phone_tip": "You will be using %s to log in/register. \nPlease ensure your mobile phone number is entered correctly.",
+  "member_basic_information": "Member Basic Information",
+  "id_number": "ID Number",
+  "please_enter_your_id_number_again": "Please enter your ID number again",
+  "full_name": "Full Name",
+  "supplementary_information": "Supplementary Information",
+  "education_level": "Education Level",
+  "religion": "Religion",
+  "marital_status": "Marital Status",
+  "employment": "Employment",
+  "address": "Address",
+  "detailed_address": "Detailed Address",
+  "please_select": "Please select",
+  "please_enter": "Please Enter",
+  "next": "Next"
 
 }

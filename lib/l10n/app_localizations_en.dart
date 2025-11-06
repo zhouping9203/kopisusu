@@ -101,6 +101,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get set_password => 'Set Password';
 
   @override
+  String get set_up => 'Set up';
+
+  @override
   String get enter_password => 'Enter Password';
 
   @override
@@ -111,4 +114,58 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get forget_the_password_ => 'Forget the password?';
+
+  @override
+  String get password_set_tip => 'Password is 6-12 characters long and can consist of letters or numbers.';
+
+  @override
+  String get the_two_passwords_do_not_match => 'The two passwords do not match';
+
+  @override
+  String get identity_verification => 'Identity Verification';
+
+  @override
+  String get login_phone_tip => 'You will be using %s to log in/register. \nPlease ensure your mobile phone number is entered correctly.';
+
+  @override
+  String get member_basic_information => 'Member Basic Information';
+
+  @override
+  String get id_number => 'ID Number';
+
+  @override
+  String get please_enter_your_id_number_again => 'Please enter your ID number again';
+
+  @override
+  String get full_name => 'Full Name';
+
+  @override
+  String get supplementary_information => 'Supplementary Information';
+
+  @override
+  String get education_level => 'Education Level';
+
+  @override
+  String get religion => 'Religion';
+
+  @override
+  String get marital_status => 'Marital Status';
+
+  @override
+  String get employment => 'Employment';
+
+  @override
+  String get address => 'Address';
+
+  @override
+  String get detailed_address => 'Detailed Address';
+
+  @override
+  String get please_select => 'Please select';
+
+  @override
+  String get please_enter => 'Please Enter';
+
+  @override
+  String get next => 'Next';
 }
