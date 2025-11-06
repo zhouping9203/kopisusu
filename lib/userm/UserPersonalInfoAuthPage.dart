@@ -1,5 +1,7 @@
 
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../component/AuthInputItemWidget.dart';
@@ -21,6 +23,8 @@ class UserPersonalInfoAuthPage extends StatefulWidget {
 class _UserPersonalInfoAuthPageState extends State<UserPersonalInfoAuthPage> {
 
   bool _submitBtnEnable = false;
+
+  PersonalInfoData? _infoDataInputServer;
 
   PersonalInfoData _infoDataInput = PersonalInfoData();
 
@@ -112,7 +116,7 @@ class _UserPersonalInfoAuthPageState extends State<UserPersonalInfoAuthPage> {
                           child: Text(AppLocalizations.of(context)!.member_basic_information,style: TextStyle(color: Color(0xff333333),fontSize: 20,fontWeight: FontWeight.w500),),
                         ),
                         SizedBox(height: 18,),
-                        AuthInputItemWidget(title: AppLocalizations.of(context)!.id_number,value: "131313131",onInputChange: (s) => {
+                        AuthInputItemWidget(title: AppLocalizations.of(context)!.id_number,value: _infoDataInputServer?.id,onInputChange: (s) => {
                           _infoDataInput.id = s,
                           _submitEnableCheck()
                         }),
@@ -193,13 +197,22 @@ class _UserPersonalInfoAuthPageState extends State<UserPersonalInfoAuthPage> {
   }
 
   void loadData(){
-
+    Future.delayed(Duration(milliseconds: 1000),(){
+      PersonalInfoData datax = PersonalInfoData();
+      datax.id = "333333";
+      setState(() {
+        _infoDataInputServer = datax;
+      });
+    });
   }
 
   void _submitEnableCheck(){
-    setState(() {
-      _submitBtnEnable = _infoDataInput.isInputFull();
+    Future.delayed(Duration(milliseconds: 100),(){
+      setState(() {
+        _submitBtnEnable = _infoDataInput.isInputFull();
+      });
     });
+
   }
 
   void _startUploadInfo(){

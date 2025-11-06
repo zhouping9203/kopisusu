@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../SafeSetStateMixin.dart';
 import '../l10n/app_localizations.dart';
 
 
@@ -21,20 +22,27 @@ class AuthInputItemWidget extends StatefulWidget {
 
 }
 
-class _AuthInputItemWidgetState extends State<AuthInputItemWidget> {
+class _AuthInputItemWidgetState extends State<AuthInputItemWidget> with SafeSetStateMixin {
 
   late TextEditingController _controller;
 
   @override
   void initState() {
     super.initState();
-
-    _controller = TextEditingController();
+    _controller = TextEditingController(text: widget.value ?? "");
     _controller.addListener(_onInputChange);
 
-    setState(() {
-      _controller.text = widget.value ?? '';
-    });
+  }
+
+  @override
+  void didUpdateWidget(covariant AuthInputItemWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if(widget.value != oldWidget.value && oldWidget.value?.isNotEmpty != true) {
+      setState(() {
+        _controller.text = widget.value ?? "";
+      });
+    }
   }
 
   @override
