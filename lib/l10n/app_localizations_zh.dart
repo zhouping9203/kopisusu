@@ -168,4 +168,13 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get next => '下一步';
+
+  @override
+  String get basic_information => '基本信息';
+
+  @override
+  String get extra_information => '附加信息';
+
+  @override
+  String get bank_information => '银行信息';
 }

@@ -168,4 +168,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get next => 'Next';
+
+  @override
+  String get basic_information => 'Basic Information';
+
+  @override
+  String get extra_information => 'Extra Information';
+
+  @override
+  String get bank_information => 'Bank Information';
 }

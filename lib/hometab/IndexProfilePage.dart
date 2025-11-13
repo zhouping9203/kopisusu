@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kopisusu/info/UserExtralInfoAuthPage.dart';
 import 'package:kopisusu/l10n/app_localizations.dart';
 import 'package:kopisusu/userm/UserLoginPage.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -121,7 +122,9 @@ class _IndexProfilePageState extends State<IndexProfilePage> {
                 color: Colors.white,
               ),
               _buildCommonItem(AppLocalizations.of(context)!.member,onTap: (){
-
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return const UserExtralInfoAuthPage(phone: "123456111");
+                }));
               }),
               _buildCommonItem(AppLocalizations.of(context)!.modify_information,onTap: (){
 
@@ -175,7 +178,7 @@ class _IndexProfilePageState extends State<IndexProfilePage> {
     );
   }
 
-  Widget _buildCommonItem(String title,{String? desc,Function? onTap,bool needLineBottom = false}){
+  Widget _buildCommonItem(String title,{String? desc,GestureTapCallback? onTap,bool needLineBottom = false}){
     Widget contentW = Container(
       color: Colors.white,
       height: 60,
@@ -191,6 +194,12 @@ class _IndexProfilePageState extends State<IndexProfilePage> {
           Image.asset("assets/images/me_profile_right_rrrow.webp")
         ],
       ),
+    );
+
+    contentW = GestureDetector(
+      onTap: onTap,
+      behavior: HitTestBehavior.opaque,
+      child: contentW,
     );
 
     return needLineBottom ? Column(

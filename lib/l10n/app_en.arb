@@ -62,6 +62,10 @@
   "detailed_address": "Detailed Address",
   "please_select": "Please select",
   "please_enter": "Please Enter",
-  "next": "Next"
+  "next": "Next",
+
+  "basic_information": "Basic Information",
+  "extra_information": "Extra Information",
+  "bank_information": "Bank Information"
 
 }

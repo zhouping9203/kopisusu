@@ -412,6 +412,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Next'**
   String get next;
+
+  /// No description provided for @basic_information.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic Information'**
+  String get basic_information;
+
+  /// No description provided for @extra_information.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra Information'**
+  String get extra_information;
+
+  /// No description provided for @bank_information.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Information'**
+  String get bank_information;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
