@@ -3,7 +3,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:kopisusu/info/UserBankInfoAuthPage.dart';
 import 'package:kopisusu/info/UserInfoAuthPageTabBar.dart';
 
 import '../component/AuthInputItemWidget.dart';
@@ -11,18 +10,18 @@ import '../component/AuthSelectItemWidget.dart';
 import '../data/PersonalInfoData.dart';
 import '../l10n/app_localizations.dart';
 
-class UserExtralInfoAuthPage extends StatefulWidget {
+class UserBankInfoAuthPage extends StatefulWidget {
 
   final String phone;
 
-  const UserExtralInfoAuthPage({Key? key,required this.phone}) : super(key: key);
+  const UserBankInfoAuthPage({Key? key,required this.phone}) : super(key: key);
 
 
   @override
-  State<UserExtralInfoAuthPage> createState() => _UserExtralInfoAuthPageState();
+  State<UserBankInfoAuthPage> createState() => _UserBankInfoAuthPageState();
 }
 
-class _UserExtralInfoAuthPageState extends State<UserExtralInfoAuthPage> {
+class _UserBankInfoAuthPageState extends State<UserBankInfoAuthPage> {
 
   bool _submitBtnEnable = false;
 
@@ -76,7 +75,7 @@ class _UserExtralInfoAuthPageState extends State<UserExtralInfoAuthPage> {
           ),
           Column(
             children: [
-              const UserInfoAuthPageTabBar(tabIndex: 1),
+              const UserInfoAuthPageTabBar(tabIndex: 2),
               Expanded(
                 flex: 1,
                 child: ListView(
@@ -242,9 +241,7 @@ class _UserExtralInfoAuthPageState extends State<UserExtralInfoAuthPage> {
 
   void _startUploadInfo(){
 
-    Navigator.of(context).push(MaterialPageRoute(builder: (context){
-      return const UserBankInfoAuthPage(phone: "123456111");
-    }));
+
   }
 
 }

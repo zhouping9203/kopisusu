@@ -177,4 +177,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bank_information => 'Bank Information';
+
+  @override
+  String get job_information => 'Job Information';
+
+  @override
+  String get monthly_income => 'Monthly income';
+
+  @override
+  String get payday => 'Payday';
+
+  @override
+  String get emergency_contact => 'Emergency contact';
+
+  @override
+  String get contact_1 => 'Contact 1';
+
+  @override
+  String get emergency_contact_tip => 'Choosing \"parents\" or \"spouse\" has a higher approval rate.';
+
+  @override
+  String get relationship => 'Relationship';
+
+  @override
+  String get contact_name => 'Contact Name';
+
+  @override
+  String get contact_phone_number => 'Contact Phone Number';
 }

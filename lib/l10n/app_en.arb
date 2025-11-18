@@ -66,6 +66,16 @@
 
   "basic_information": "Basic Information",
   "extra_information": "Extra Information",
-  "bank_information": "Bank Information"
+  "bank_information": "Bank Information",
+
+  "job_information": "Job Information",
+  "monthly_income": "Monthly income",
+  "payday": "Payday",
+  "emergency_contact": "Emergency contact",
+  "contact_1": "Contact 1",
+  "emergency_contact_tip": "Choosing \"parents\" or \"spouse\" has a higher approval rate.",
+  "relationship": "Relationship",
+  "contact_name": "Contact Name",
+  "contact_phone_number": "Contact Phone Number"
 
 }

@@ -65,6 +65,16 @@
 
   "basic_information": "基本信息",
   "extra_information": "附加信息",
-  "bank_information": "银行信息"
+  "bank_information": "银行信息",
+
+  "job_information": "工作信息",
+  "monthly_income": "月收入",
+  "payday": "发薪日",
+  "emergency_contact": "紧急联系人",
+  "contact_1": "联系人1",
+  "emergency_contact_tip": "选择父母、夫妻通过率更高",
+  "relationship": "关系",
+  "contact_name": "联系人姓名",
+  "contact_phone_number": "联系人电话"
 
 }

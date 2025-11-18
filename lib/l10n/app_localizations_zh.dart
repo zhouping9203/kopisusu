@@ -177,4 +177,31 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get bank_information => '银行信息';
+
+  @override
+  String get job_information => '工作信息';
+
+  @override
+  String get monthly_income => '月收入';
+
+  @override
+  String get payday => '发薪日';
+
+  @override
+  String get emergency_contact => '紧急联系人';
+
+  @override
+  String get contact_1 => '联系人1';
+
+  @override
+  String get emergency_contact_tip => '选择父母、夫妻通过率更高';
+
+  @override
+  String get relationship => '关系';
+
+  @override
+  String get contact_name => '联系人姓名';
+
+  @override
+  String get contact_phone_number => '联系人电话';
 }

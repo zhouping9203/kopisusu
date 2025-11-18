@@ -430,6 +430,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Bank Information'**
   String get bank_information;
+
+  /// No description provided for @job_information.
+  ///
+  /// In en, this message translates to:
+  /// **'Job Information'**
+  String get job_information;
+
+  /// No description provided for @monthly_income.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly income'**
+  String get monthly_income;
+
+  /// No description provided for @payday.
+  ///
+  /// In en, this message translates to:
+  /// **'Payday'**
+  String get payday;
+
+  /// No description provided for @emergency_contact.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency contact'**
+  String get emergency_contact;
+
+  /// No description provided for @contact_1.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact 1'**
+  String get contact_1;
+
+  /// No description provided for @emergency_contact_tip.
+  ///
+  /// In en, this message translates to:
+  /// **'Choosing \"parents\" or \"spouse\" has a higher approval rate.'**
+  String get emergency_contact_tip;
+
+  /// No description provided for @relationship.
+  ///
+  /// In en, this message translates to:
+  /// **'Relationship'**
+  String get relationship;
+
+  /// No description provided for @contact_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Name'**
+  String get contact_name;
+
+  /// No description provided for @contact_phone_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Phone Number'**
+  String get contact_phone_number;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

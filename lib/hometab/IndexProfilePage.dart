@@ -7,6 +7,8 @@ import 'package:kopisusu/l10n/app_localizations.dart';
 import 'package:kopisusu/userm/UserLoginPage.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+import '../info/UserBankInfoAuthPage.dart';
+
 class IndexProfilePage extends StatefulWidget {
   const IndexProfilePage({Key? key}) : super(key: key);
 
@@ -127,7 +129,9 @@ class _IndexProfilePageState extends State<IndexProfilePage> {
                 }));
               }),
               _buildCommonItem(AppLocalizations.of(context)!.modify_information,onTap: (){
-
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return const UserBankInfoAuthPage(phone: "123456111");
+                }));
               }),
 
               const SizedBox(height: 15,),
