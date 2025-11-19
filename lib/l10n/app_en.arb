@@ -76,6 +76,16 @@
   "emergency_contact_tip": "Choosing \"parents\" or \"spouse\" has a higher approval rate.",
   "relationship": "Relationship",
   "contact_name": "Contact Name",
-  "contact_phone_number": "Contact Phone Number"
+  "contact_phone_number": "Contact Phone Number",
 
+  "identification_information": "Identification Information",
+  "id_photo_tip": "%s, please take a photo of your ID card for verification.",
+  "front_of_id_card": "Front of ID Card",
+  "selfie": "Selfie",
+  "id_card": "ID Card",
+  "view_example": "View Example",
+  "name_of_bank": "Name of Bank",
+  "beneficiary_account_number": "Beneficiary Account Number",
+  "retype_your_account_number": "Retype your account number",
+  "confirm_your_information_tip": "Confirm your information to complete membership registration."
 }

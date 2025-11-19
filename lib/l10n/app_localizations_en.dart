@@ -204,4 +204,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get contact_phone_number => 'Contact Phone Number';
+
+  @override
+  String get identification_information => 'Identification Information';
+
+  @override
+  String get id_photo_tip => '%s, please take a photo of your ID card for verification.';
+
+  @override
+  String get front_of_id_card => 'Front of ID Card';
+
+  @override
+  String get selfie => 'Selfie';
+
+  @override
+  String get id_card => 'ID Card';
+
+  @override
+  String get view_example => 'View Example';
+
+  @override
+  String get name_of_bank => 'Name of Bank';
+
+  @override
+  String get beneficiary_account_number => 'Beneficiary Account Number';
+
+  @override
+  String get retype_your_account_number => 'Retype your account number';
+
+  @override
+  String get confirm_your_information_tip => 'Confirm your information to complete membership registration.';
 }

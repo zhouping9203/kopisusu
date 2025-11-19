@@ -484,6 +484,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Contact Phone Number'**
   String get contact_phone_number;
+
+  /// No description provided for @identification_information.
+  ///
+  /// In en, this message translates to:
+  /// **'Identification Information'**
+  String get identification_information;
+
+  /// No description provided for @id_photo_tip.
+  ///
+  /// In en, this message translates to:
+  /// **'%s, please take a photo of your ID card for verification.'**
+  String get id_photo_tip;
+
+  /// No description provided for @front_of_id_card.
+  ///
+  /// In en, this message translates to:
+  /// **'Front of ID Card'**
+  String get front_of_id_card;
+
+  /// No description provided for @selfie.
+  ///
+  /// In en, this message translates to:
+  /// **'Selfie'**
+  String get selfie;
+
+  /// No description provided for @id_card.
+  ///
+  /// In en, this message translates to:
+  /// **'ID Card'**
+  String get id_card;
+
+  /// No description provided for @view_example.
+  ///
+  /// In en, this message translates to:
+  /// **'View Example'**
+  String get view_example;
+
+  /// No description provided for @name_of_bank.
+  ///
+  /// In en, this message translates to:
+  /// **'Name of Bank'**
+  String get name_of_bank;
+
+  /// No description provided for @beneficiary_account_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Beneficiary Account Number'**
+  String get beneficiary_account_number;
+
+  /// No description provided for @retype_your_account_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Retype your account number'**
+  String get retype_your_account_number;
+
+  /// No description provided for @confirm_your_information_tip.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm your information to complete membership registration.'**
+  String get confirm_your_information_tip;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

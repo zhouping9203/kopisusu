@@ -75,6 +75,16 @@
   "emergency_contact_tip": "选择父母、夫妻通过率更高",
   "relationship": "关系",
   "contact_name": "联系人姓名",
-  "contact_phone_number": "联系人电话"
+  "contact_phone_number": "联系人电话",
 
+  "identification_information": "身份信息",
+  "id_photo_tip": "请拍摄身份证号%s的照片",
+  "front_of_id_card": "身份证正面照",
+  "selfie": "自拍照",
+  "id_card": "身份证",
+  "view_example": "查看示例",
+  "name_of_bank": "银行名称",
+  "beneficiary_account_number": "收款账号",
+  "retype_your_account_number": "确认账号",
+  "confirm_your_information_tip": "确认提交信息以成为会员"
 }

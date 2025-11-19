@@ -29,6 +29,8 @@ class _UserBankInfoAuthPageState extends State<UserBankInfoAuthPage> {
 
   PersonalInfoData _infoDataInput = PersonalInfoData();
 
+  bool _onPravicyAgree = false;
+
   @override
   void initState() {
     super.initState();
@@ -95,50 +97,81 @@ class _UserBankInfoAuthPageState extends State<UserBankInfoAuthPage> {
                             children: [
                               Container(
                                 margin: EdgeInsets.only(left: 14,right: 14),
-                                child: Text(AppLocalizations.of(context)!.job_information,style: TextStyle(color: Color(0xff333333),fontSize: 20,fontWeight: FontWeight.w500),),
-                              ),
-                              SizedBox(height: 18,),
-                              AuthInputItemWidget(title: AppLocalizations.of(context)!.monthly_income,value: _infoDataInputServer?.id,onInputChange: (s) => {
-                                _infoDataInput.id = s,
-                                _submitEnableCheck()
-                              },needBDividerLine: true,),
-                              AuthSelectItemWidget(title: AppLocalizations.of(context)!.payday,needBDividerLine: false,),
-                              SizedBox(height: 6,)
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 15,top: 15,right: 15),
-                          padding: EdgeInsets.only(top: 14),
-                          width: double.maxFinite,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(left: 14,right: 14),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("${AppLocalizations.of(context)!.emergency_contact} 1",style: TextStyle(color: Color(0xff333333),fontSize: 20,fontWeight: FontWeight.w500),),
-                                    Text(AppLocalizations.of(context)!.emergency_contact_tip,style: TextStyle(color: Color(0xff999999),fontSize: 15,fontWeight: FontWeight.w500),)
+                                    Text(AppLocalizations.of(context)!.identification_information,style: TextStyle(color: Color(0xff333333),fontSize: 20,fontWeight: FontWeight.w500),),
+                                    Text(AppLocalizations.of(context)!.id_photo_tip,style: TextStyle(color: Color(0xffFFBE00),fontSize: 13),)
                                   ],
                                 ),
                               ),
                               SizedBox(height: 18,),
-                              AuthSelectItemWidget(title: AppLocalizations.of(context)!.relationship),
-                              AuthInputItemWidget(title: AppLocalizations.of(context)!.contact_name,value: _infoDataInputServer?.id,onInputChange: (s) => {
-                                _infoDataInput.id = s,
-                                _submitEnableCheck()
-                              },needBDividerLine: true,),
-                              AuthInputItemWidget(title: AppLocalizations.of(context)!.contact_phone_number,value: _infoDataInputServer?.id,onInputChange: (s) => {
-                                _infoDataInput.id = s,
-                                _submitEnableCheck()
-                              }),
-                              SizedBox(height: 6,)
+
+                              Container(
+                                margin: EdgeInsets.only(left: 14,right: 14),
+                                child: Row(
+                                  children: [
+                                    Text(AppLocalizations.of(context)!.id_card,style: TextStyle(color: Color(0xff333333),fontSize: 15),),
+                                    SizedBox(width: 6,),
+                                    Text(AppLocalizations.of(context)!.view_example,style: TextStyle(color: Color(0xffFF832A),fontSize: 15,decoration: TextDecoration.underline,decorationColor: Color(0xffFF832A)),),
+                                  ],
+                                ),
+                              ),
+                              
+                              Container(
+                                margin: EdgeInsets.only(top: 17),
+                                alignment: Alignment.center,
+                                child: GestureDetector(
+                                  behavior: HitTestBehavior.opaque,
+                                  onTap: (){
+
+                                  },
+                                  child: Stack(
+                                    alignment: Alignment.bottomCenter,
+                                    children: [
+                                      Image.asset("assets/images/default_camera_img.png",width: 193,height: 126.5,),
+                                      Container(
+                                        margin: EdgeInsets.only(bottom: 10),
+                                        child: Text(AppLocalizations.of(context)!.front_of_id_card,style: TextStyle(color: Color(0xff333333),fontSize: 15),),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+
+                              SizedBox(height: 30,),
+
+                              Container(
+                                margin: EdgeInsets.only(left: 14,right: 14),
+                                child: Row(
+                                  children: [
+                                    Text(AppLocalizations.of(context)!.selfie,style: TextStyle(color: Color(0xff333333),fontSize: 15),),
+                                    SizedBox(width: 6,),
+                                    Text(AppLocalizations.of(context)!.view_example,style: TextStyle(color: Color(0xffFF832A),fontSize: 15,decoration: TextDecoration.underline,decorationColor: Color(0xffFF832A)),),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(top: 17),
+                                alignment: Alignment.center,
+                                child: GestureDetector(
+                                  behavior: HitTestBehavior.opaque,
+                                  onTap: (){
+
+                                  },
+                                  child: Stack(
+                                    alignment: Alignment.bottomCenter,
+                                    children: [
+                                      Image.asset("assets/images/default_camera_img.png",width: 193,height: 126.5,),
+                                      Container(
+                                        margin: EdgeInsets.only(bottom: 10),
+                                        child: Text(AppLocalizations.of(context)!.selfie,style: TextStyle(color: Color(0xff333333),fontSize: 15),),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 30,)
                             ],
                           ),
                         ),
@@ -156,21 +189,15 @@ class _UserBankInfoAuthPageState extends State<UserBankInfoAuthPage> {
                             children: [
                               Container(
                                 margin: EdgeInsets.only(left: 14,right: 14),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("${AppLocalizations.of(context)!.emergency_contact} 2",style: TextStyle(color: Color(0xff333333),fontSize: 20,fontWeight: FontWeight.w500),),
-                                    Text(AppLocalizations.of(context)!.emergency_contact_tip,style: TextStyle(color: Color(0xff999999),fontSize: 15,fontWeight: FontWeight.w500),)
-                                  ],
-                                ),
+                                child:  Text(AppLocalizations.of(context)!.bank_information,style: TextStyle(color: Color(0xff333333),fontSize: 20,fontWeight: FontWeight.w500),),
                               ),
                               SizedBox(height: 18,),
-                              AuthSelectItemWidget(title: AppLocalizations.of(context)!.relationship),
-                              AuthInputItemWidget(title: AppLocalizations.of(context)!.contact_name,value: _infoDataInputServer?.id,onInputChange: (s) => {
+                              AuthSelectItemWidget(title: AppLocalizations.of(context)!.name_of_bank),
+                              AuthInputItemWidget(title: AppLocalizations.of(context)!.beneficiary_account_number,value: _infoDataInputServer?.id,onInputChange: (s) => {
                                 _infoDataInput.id = s,
                                 _submitEnableCheck()
                               },needBDividerLine: true,),
-                              AuthInputItemWidget(title: AppLocalizations.of(context)!.contact_phone_number,value: _infoDataInputServer?.id,onInputChange: (s) => {
+                              AuthInputItemWidget(title: AppLocalizations.of(context)!.retype_your_account_number,value: _infoDataInputServer?.id,onInputChange: (s) => {
                                 _infoDataInput.id = s,
                                 _submitEnableCheck()
                               }),
@@ -203,6 +230,22 @@ class _UserBankInfoAuthPageState extends State<UserBankInfoAuthPage> {
                             ),
                           ),
                         ),
+                        SizedBox(height: 2.5,),
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: _onPravicyAgree,
+                              onChanged: (e){
+                                setState(() {
+                                  _onPravicyAgree = e ?? false;
+                                });
+                              },
+                              shape: const CircleBorder(),
+                              activeColor: const Color(0xffFF8007),
+                            ),
+                            Text(AppLocalizations.of(context)!.confirm_your_information_tip,style: const TextStyle(color: Color(0xff999999),fontSize: 12),),
+                          ],
+                        ),
                         SizedBox(height: 80,),
                       ],
                     )
@@ -213,6 +256,7 @@ class _UserBankInfoAuthPageState extends State<UserBankInfoAuthPage> {
           ),
           Container(
             alignment: Alignment.topRight,
+            margin: EdgeInsets.only(top: 61),
             child: Image.asset('assets/images/app_name_jiaobiao.png', width: 75, height: 75),
           ),
         ],

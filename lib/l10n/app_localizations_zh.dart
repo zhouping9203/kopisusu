@@ -204,4 +204,34 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get contact_phone_number => '联系人电话';
+
+  @override
+  String get identification_information => '身份信息';
+
+  @override
+  String get id_photo_tip => '请拍摄身份证号%s的照片';
+
+  @override
+  String get front_of_id_card => '身份证正面照';
+
+  @override
+  String get selfie => '自拍照';
+
+  @override
+  String get id_card => '身份证';
+
+  @override
+  String get view_example => '查看示例';
+
+  @override
+  String get name_of_bank => '银行名称';
+
+  @override
+  String get beneficiary_account_number => '收款账号';
+
+  @override
+  String get retype_your_account_number => '确认账号';
+
+  @override
+  String get confirm_your_information_tip => '确认提交信息以成为会员';
 }

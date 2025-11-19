@@ -214,6 +214,7 @@ class _UserExtralInfoAuthPageState extends State<UserExtralInfoAuthPage> {
           ),
           Container(
             alignment: Alignment.topRight,
+            margin: EdgeInsets.only(top: 61),
             child: Image.asset('assets/images/app_name_jiaobiao.png', width: 75, height: 75),
           ),
         ],
