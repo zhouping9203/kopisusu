@@ -86,5 +86,23 @@
   "name_of_bank": "银行名称",
   "beneficiary_account_number": "收款账号",
   "retype_your_account_number": "确认账号",
-  "confirm_your_information_tip": "确认提交信息以成为会员"
+  "confirm_your_information_tip": "确认提交信息以成为会员",
+  "sample_id_card_photo": "身份证示例照片",
+  "front_id_photo_tip1": "请上传身份证正面照片",
+  "id_card_is_clearly_visible_tip": "身份证上的信息清晰可见",
+  "continue_uploading": "继续上传",
+  "sample_selfie_photo": "自拍照示例照片",
+  "selfie_tip1": "请拍摄一张清晰的、能看到脸部的照片",
+  "selfie_tip2": "请将摄像头朝向脸部",
+  "selfie_tip3": "确保脸部处于光线充足的状态",
+
+  "penting": "Penting",
+  "bank_submit_penting_content": "Calon anggota menyetujut untukmembayar Simpanan Pokok sebesaRp 10.000 saat menjadi Anggotadan membayar totat Simpanan Wajitsebesar Rp 5.000 per bulan",
+  "sure": "确定",
+
+  "signature": "签名",
+  "signature_tip": "请在下方空白栏里签名",
+  "rewrite": "重写",
+  "submit": "提交",
+  "please_sign_first": "请先签名"
 }

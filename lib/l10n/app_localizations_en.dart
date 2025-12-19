@@ -234,4 +234,52 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get confirm_your_information_tip => 'Confirm your information to complete membership registration.';
+
+  @override
+  String get sample_id_card_photo => 'Sample ID card photo';
+
+  @override
+  String get front_id_photo_tip1 => 'Please upload a photo of the front of your ID card.';
+
+  @override
+  String get id_card_is_clearly_visible_tip => 'The information on the ID card is clearly visible.';
+
+  @override
+  String get continue_uploading => 'Continue uploading';
+
+  @override
+  String get sample_selfie_photo => 'Selfie example photo';
+
+  @override
+  String get selfie_tip1 => 'Please take a clear photo that shows your face.';
+
+  @override
+  String get selfie_tip2 => 'Please point the camera at your face.';
+
+  @override
+  String get selfie_tip3 => 'Make sure your face is in good lighting.';
+
+  @override
+  String get penting => 'Penting';
+
+  @override
+  String get bank_submit_penting_content => 'Calon anggota menyetujut untukmembayar Simpanan Pokok sebesaRp 10.000 saat menjadi Anggotadan membayar totat Simpanan Wajitsebesar Rp 5.000 per bulan';
+
+  @override
+  String get sure => 'Sure';
+
+  @override
+  String get signature => 'Signature';
+
+  @override
+  String get signature_tip => 'Please sign your name in the blank space below.';
+
+  @override
+  String get rewrite => 'Rewrite';
+
+  @override
+  String get submit => 'Submit';
+
+  @override
+  String get please_sign_first => 'Please sign first.';
 }

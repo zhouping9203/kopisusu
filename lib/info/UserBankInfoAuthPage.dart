@@ -113,7 +113,13 @@ class _UserBankInfoAuthPageState extends State<UserBankInfoAuthPage> {
                                   children: [
                                     Text(AppLocalizations.of(context)!.id_card,style: TextStyle(color: Color(0xff333333),fontSize: 15),),
                                     SizedBox(width: 6,),
-                                    Text(AppLocalizations.of(context)!.view_example,style: TextStyle(color: Color(0xffFF832A),fontSize: 15,decoration: TextDecoration.underline,decorationColor: Color(0xffFF832A)),),
+                                    GestureDetector(
+                                      behavior: HitTestBehavior.opaque,
+                                      onTap: (){
+                                        _showIdCardPhotoTipDialog();
+                                      },
+                                      child: Text(AppLocalizations.of(context)!.view_example,style: TextStyle(color: Color(0xffFF832A),fontSize: 15,decoration: TextDecoration.underline,decorationColor: Color(0xffFF832A)),),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -147,7 +153,13 @@ class _UserBankInfoAuthPageState extends State<UserBankInfoAuthPage> {
                                   children: [
                                     Text(AppLocalizations.of(context)!.selfie,style: TextStyle(color: Color(0xff333333),fontSize: 15),),
                                     SizedBox(width: 6,),
-                                    Text(AppLocalizations.of(context)!.view_example,style: TextStyle(color: Color(0xffFF832A),fontSize: 15,decoration: TextDecoration.underline,decorationColor: Color(0xffFF832A)),),
+                                    GestureDetector(
+                                      behavior: HitTestBehavior.opaque,
+                                      onTap: (){
+                                        _showSelfieTipDialog();
+                                      },
+                                      child: Text(AppLocalizations.of(context)!.view_example,style: TextStyle(color: Color(0xffFF832A),fontSize: 15,decoration: TextDecoration.underline,decorationColor: Color(0xffFF832A)),),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -218,7 +230,7 @@ class _UserBankInfoAuthPageState extends State<UserBankInfoAuthPage> {
                               elevation: 2,
                             ),
                             onPressed: () {
-                              if(_submitBtnEnable) {
+                              if(!_submitBtnEnable) {
                                 _startUploadInfo();
                               }
                             },
@@ -265,6 +277,225 @@ class _UserBankInfoAuthPageState extends State<UserBankInfoAuthPage> {
     );
   }
 
+  void _showIdCardPhotoTipDialog() {
+    showGeneralDialog(
+        context: context,
+        barrierDismissible: true,
+        barrierLabel: "",
+        pageBuilder:  (context, animation, secondaryAnimation) {
+          return Center(
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.9,
+              padding: EdgeInsets.only(left: 16,right: 16,top: 17.5,bottom: 23),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.1),
+                    blurRadius: 20,
+                    spreadRadius: 5,
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    children: [
+                      Expanded(child: Container(
+                        margin: EdgeInsets.only(top: 15.5,left: 23),
+                        alignment: Alignment.center,
+                        child: Text(AppLocalizations.of(context)!.sample_id_card_photo,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Color(0xff333333),decoration: TextDecoration.none),),
+                      )),
+                      GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                        child: Image.asset("assets/images/close_type2.png",width: 23,height: 23,),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 15.5,),
+                  Image.asset("assets/images/id_front_demo.png",width: 310),
+                  SizedBox(height: 10,),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(". ${AppLocalizations.of(context)!.front_id_photo_tip1}",style: TextStyle(fontSize: 13,color: Color(0xff999999),decoration: TextDecoration.none),),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(". ${AppLocalizations.of(context)!.id_card_is_clearly_visible_tip}",style: TextStyle(fontSize: 13,color: Color(0xff999999),decoration: TextDecoration.none),),
+                  ),
+                  SizedBox(height: 15.5,),
+                  Container(
+                    width: double.maxFinite,
+                    height: 49,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xff123157), // 背景颜色
+                        foregroundColor: Colors.white, // 文字/图标颜色
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(AppLocalizations.of(context)!.continue_uploading,style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.white),),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        }
+    );
+  }
+
+  void _showSelfieTipDialog() {
+    showGeneralDialog(
+        context: context,
+        barrierDismissible: true,
+        barrierLabel: "",
+        pageBuilder:  (context, animation, secondaryAnimation) {
+          return Center(
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.9,
+              padding: EdgeInsets.only(left: 16,right: 16,top: 17.5,bottom: 23),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.1),
+                    blurRadius: 20,
+                    spreadRadius: 5,
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    children: [
+                      Expanded(child: Container(
+                        margin: EdgeInsets.only(top: 15.5,left: 23),
+                        alignment: Alignment.center,
+                        child: Text(AppLocalizations.of(context)!.sample_selfie_photo,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Color(0xff333333),decoration: TextDecoration.none),),
+                      )),
+                      GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                        child: Image.asset("assets/images/close_type2.png",width: 23,height: 23,),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 15.5,),
+                  Image.asset("assets/images/selfie_demo.png",width: 255),
+                  SizedBox(height: 10,),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(". ${AppLocalizations.of(context)!.selfie_tip1}",style: TextStyle(fontSize: 13,color: Color(0xff999999),decoration: TextDecoration.none),),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(". ${AppLocalizations.of(context)!.selfie_tip2}",style: TextStyle(fontSize: 13,color: Color(0xff999999),decoration: TextDecoration.none),),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(". ${AppLocalizations.of(context)!.selfie_tip3}",style: TextStyle(fontSize: 13,color: Color(0xff999999),decoration: TextDecoration.none),),
+                  ),
+                  SizedBox(height: 15.5,),
+                  Container(
+                    width: double.maxFinite,
+                    height: 49,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xff123157), // 背景颜色
+                        foregroundColor: Colors.white, // 文字/图标颜色
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(AppLocalizations.of(context)!.continue_uploading,style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.white),),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        }
+    );
+  }
+
+  void _showSubmitPentingTipDialog() {
+    showGeneralDialog(
+        context: context,
+        barrierDismissible: true,
+        barrierLabel: "",
+        pageBuilder:  (context, animation, secondaryAnimation) {
+          return Center(
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.75,
+              padding: EdgeInsets.only(left: 0,right: 0,top: 18,bottom: 0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.1),
+                    blurRadius: 20,
+                    spreadRadius: 5,
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 0,left: 0),
+                    alignment: Alignment.center,
+                    child: Text(AppLocalizations.of(context)!.penting,style: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xff333333),decoration: TextDecoration.none),),
+                  ),
+                  SizedBox(height: 15.5,),
+                  Container(
+                    margin: EdgeInsets.only(left: 28,right: 28),
+                    alignment: Alignment.center,
+                    child: Text(AppLocalizations.of(context)!.bank_submit_penting_content,style: TextStyle(fontSize: 14,color: Color(0xff9A9A9A),decoration: TextDecoration.none),),
+                  ),
+                  SizedBox(height: 18.5,),
+                  Container(
+                    width: double.maxFinite,
+                    height: 49,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xffffffff), // 背景颜色
+                        foregroundColor: Color(0xff333333), // 文字/图标颜色
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(AppLocalizations.of(context)!.sure,style: TextStyle(fontSize: 17,color: Color(0xff333333))),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
+        }
+    );
+  }
+
   void loadData(){
     Future.delayed(Duration(milliseconds: 1000),(){
       PersonalInfoData datax = PersonalInfoData();
@@ -284,7 +515,7 @@ class _UserBankInfoAuthPageState extends State<UserBankInfoAuthPage> {
   }
 
   void _startUploadInfo(){
-
+    _showSubmitPentingTipDialog();
 
   }
 

@@ -7,6 +7,7 @@ import 'package:kopisusu/l10n/app_localizations.dart';
 import 'package:kopisusu/userm/UserLoginPage.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+import '../info/SignaturePage.dart';
 import '../info/UserBankInfoAuthPage.dart';
 
 class IndexProfilePage extends StatefulWidget {
@@ -137,7 +138,9 @@ class _IndexProfilePageState extends State<IndexProfilePage> {
               const SizedBox(height: 15,),
 
               _buildCommonItem(AppLocalizations.of(context)!.help,needLineBottom:true,onTap: (){
-
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return const SignaturePage();
+                }));
               }),
               _buildCommonItem(AppLocalizations.of(context)!.about,desc: version, onTap: (){
 

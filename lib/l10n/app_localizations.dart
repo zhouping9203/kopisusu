@@ -544,6 +544,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Confirm your information to complete membership registration.'**
   String get confirm_your_information_tip;
+
+  /// No description provided for @sample_id_card_photo.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample ID card photo'**
+  String get sample_id_card_photo;
+
+  /// No description provided for @front_id_photo_tip1.
+  ///
+  /// In en, this message translates to:
+  /// **'Please upload a photo of the front of your ID card.'**
+  String get front_id_photo_tip1;
+
+  /// No description provided for @id_card_is_clearly_visible_tip.
+  ///
+  /// In en, this message translates to:
+  /// **'The information on the ID card is clearly visible.'**
+  String get id_card_is_clearly_visible_tip;
+
+  /// No description provided for @continue_uploading.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue uploading'**
+  String get continue_uploading;
+
+  /// No description provided for @sample_selfie_photo.
+  ///
+  /// In en, this message translates to:
+  /// **'Selfie example photo'**
+  String get sample_selfie_photo;
+
+  /// No description provided for @selfie_tip1.
+  ///
+  /// In en, this message translates to:
+  /// **'Please take a clear photo that shows your face.'**
+  String get selfie_tip1;
+
+  /// No description provided for @selfie_tip2.
+  ///
+  /// In en, this message translates to:
+  /// **'Please point the camera at your face.'**
+  String get selfie_tip2;
+
+  /// No description provided for @selfie_tip3.
+  ///
+  /// In en, this message translates to:
+  /// **'Make sure your face is in good lighting.'**
+  String get selfie_tip3;
+
+  /// No description provided for @penting.
+  ///
+  /// In en, this message translates to:
+  /// **'Penting'**
+  String get penting;
+
+  /// No description provided for @bank_submit_penting_content.
+  ///
+  /// In en, this message translates to:
+  /// **'Calon anggota menyetujut untukmembayar Simpanan Pokok sebesaRp 10.000 saat menjadi Anggotadan membayar totat Simpanan Wajitsebesar Rp 5.000 per bulan'**
+  String get bank_submit_penting_content;
+
+  /// No description provided for @sure.
+  ///
+  /// In en, this message translates to:
+  /// **'Sure'**
+  String get sure;
+
+  /// No description provided for @signature.
+  ///
+  /// In en, this message translates to:
+  /// **'Signature'**
+  String get signature;
+
+  /// No description provided for @signature_tip.
+  ///
+  /// In en, this message translates to:
+  /// **'Please sign your name in the blank space below.'**
+  String get signature_tip;
+
+  /// No description provided for @rewrite.
+  ///
+  /// In en, this message translates to:
+  /// **'Rewrite'**
+  String get rewrite;
+
+  /// No description provided for @submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get submit;
+
+  /// No description provided for @please_sign_first.
+  ///
+  /// In en, this message translates to:
+  /// **'Please sign first.'**
+  String get please_sign_first;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

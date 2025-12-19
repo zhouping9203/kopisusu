@@ -234,4 +234,52 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get confirm_your_information_tip => '确认提交信息以成为会员';
+
+  @override
+  String get sample_id_card_photo => '身份证示例照片';
+
+  @override
+  String get front_id_photo_tip1 => '请上传身份证正面照片';
+
+  @override
+  String get id_card_is_clearly_visible_tip => '身份证上的信息清晰可见';
+
+  @override
+  String get continue_uploading => '继续上传';
+
+  @override
+  String get sample_selfie_photo => '自拍照示例照片';
+
+  @override
+  String get selfie_tip1 => '请拍摄一张清晰的、能看到脸部的照片';
+
+  @override
+  String get selfie_tip2 => '请将摄像头朝向脸部';
+
+  @override
+  String get selfie_tip3 => '确保脸部处于光线充足的状态';
+
+  @override
+  String get penting => 'Penting';
+
+  @override
+  String get bank_submit_penting_content => 'Calon anggota menyetujut untukmembayar Simpanan Pokok sebesaRp 10.000 saat menjadi Anggotadan membayar totat Simpanan Wajitsebesar Rp 5.000 per bulan';
+
+  @override
+  String get sure => '确定';
+
+  @override
+  String get signature => '签名';
+
+  @override
+  String get signature_tip => '请在下方空白栏里签名';
+
+  @override
+  String get rewrite => '重写';
+
+  @override
+  String get submit => '提交';
+
+  @override
+  String get please_sign_first => '请先签名';
 }

@@ -87,5 +87,23 @@
   "name_of_bank": "Name of Bank",
   "beneficiary_account_number": "Beneficiary Account Number",
   "retype_your_account_number": "Retype your account number",
-  "confirm_your_information_tip": "Confirm your information to complete membership registration."
+  "confirm_your_information_tip": "Confirm your information to complete membership registration.",
+  "sample_id_card_photo": "Sample ID card photo",
+  "front_id_photo_tip1": "Please upload a photo of the front of your ID card.",
+  "id_card_is_clearly_visible_tip": "The information on the ID card is clearly visible.",
+  "continue_uploading": "Continue uploading",
+  "sample_selfie_photo": "Selfie example photo",
+  "selfie_tip1": "Please take a clear photo that shows your face.",
+  "selfie_tip2": "Please point the camera at your face.",
+  "selfie_tip3": "Make sure your face is in good lighting.",
+
+  "penting": "Penting",
+  "bank_submit_penting_content": "Calon anggota menyetujut untukmembayar Simpanan Pokok sebesaRp 10.000 saat menjadi Anggotadan membayar totat Simpanan Wajitsebesar Rp 5.000 per bulan",
+  "sure": "Sure",
+
+  "signature": "Signature",
+  "signature_tip": "Please sign your name in the blank space below.",
+  "rewrite": "Rewrite",
+  "submit": "Submit",
+  "please_sign_first": "Please sign first."
 }
